@@ -25,7 +25,7 @@ The application is to transform a given JSON input into a specific formatted JSO
 
 ===== Steps
 . Navigate to the extracted directory
-. `export PYTHONPATH` to the current working directory
+. `export PYTHONPATH` to the current working directory (If not installing using `setup.py`)
 . `./bin/execute.py --input_json data.json --output data-transformed.json`
 . Both --input_json and --output parameters defaults to `data.json` & `data-transformed.json` respectively
 . Presence of the `input_json` file is mandatory else the script exits with a non-zero error code

@@ -4,7 +4,7 @@ Abhisek Kumar Rout <abhisek.rout99@gmail.com>
 
 == Overview
 
-The application is to tranform a given JSON input into a specific formatted JSON output as per the requirements
+The application is to transform a given JSON input into a specific formatted JSON output as per the requirements
 
 == Packages
 

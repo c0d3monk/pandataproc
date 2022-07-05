@@ -1,0 +1,54 @@
+[
+ {
+  "id": 1,
+  "vendor": "acme",
+  "date": "03/03/2017",
+  "customer": {
+   "id": "8baa6dea-cc70-4748-9b27-b174e70e4b66",
+   "name": "Lezlie Stuther",
+   "address": "19045 Lawn Court"
+  },
+  "order": {
+   "hat": {
+    "quantity": 14,
+    "price": 8
+   },
+   "cake": {
+    "quantity": 9,
+    "price": 3
+   },
+   "ice": {
+    "quantity": 10,
+    "price": 5
+   },
+   "candy": {
+    "quantity": 6,
+    "price": 8
+   }
+  }
+ },
+ {
+  "id": 2,
+  "vendor": "acme",
+  "date": "08/23/2017",
+  "customer": {
+   "id": "d2584a20-7490-499a-83be-d7cea4a0e260",
+   "name": "Alma Prantoni",
+   "address": "9 Trailsway Road"
+  },
+  "order": {
+   "cake": {
+    "quantity": 8,
+    "price": 1
+   },
+   "punch": {
+    "quantity": 19,
+    "price": 7
+   },
+   "bouncy house": {
+    "quantity": 4,
+    "price": 9
+   }
+  }
+ }
+]

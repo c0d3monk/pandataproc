@@ -43,27 +43,29 @@ class DataProcessor:
         """
         self.logger.debug(self.input_json_data)
         processed_data = {"customers": [], "orders": []}
-        for each_data in self.input_json_data:
-            self.logger.debug(f"Transforming data for customer id {each_data.get('customer').get('id')}")
-            try:
-                orders = []
-                customer_info = each_data.pop("customer")
-                customer_id = customer_info.get("id")
-                processed_data['customers'].append(customer_info)
-                order = each_data.pop('order')
-                for item, value in order.items():
-                    order_info = {
-                        "item": item,
-                        "quantity": value.get("quantity"),
-                        "price": value.get("price"),
-                        "revenue": int(value.get("price")) * int(value.get("quantity"))
-                    }
-                    orders.append(order_info)
-                orders_info = each_data
-                orders_info['orders'] = orders
-                orders_info['customer'] = customer_id
-                processed_data['orders'].append(orders_info)
-            except Exception as err:
-                self.logger.error(f"Failed transforming the data {each_data} with error {err}")
-        self.logger.debug(f"Transforming data complete")
-        return processed_data
+        if self.input_json_data:
+            for each_data in self.input_json_data:
+                try:
+                    self.logger.debug(f"Transforming data for customer id {each_data.get('customer').get('id')}")
+                    orders = []
+                    customer_info = each_data.pop("customer")
+                    customer_id = customer_info.get("id")
+                    processed_data['customers'].append(customer_info)
+                    order = each_data.pop('order')
+                    for item, value in order.items():
+                        order_info = {
+                            "item": item,
+                            "quantity": value.get("quantity"),
+                            "price": value.get("price"),
+                            "revenue": int(value.get("price")) * int(value.get("quantity"))
+                        }
+                        orders.append(order_info)
+                    orders_info = each_data
+                    orders_info['orders'] = orders
+                    orders_info['customer'] = customer_id
+                    processed_data['orders'].append(orders_info)
+                except Exception as err:
+                    self.logger.error(f"Failed transforming the data {each_data} with error {err}")
+                    return None
+            self.logger.debug(f"Transforming data complete")
+            return processed_data

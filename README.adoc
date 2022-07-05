@@ -24,7 +24,9 @@ The application is to tranform a given JSON input into a specific formatted JSON
 ==== Run
 
 ===== Steps
-. `./bin/execute.py --input_json data/data.json --output data-transformed.json`
+. `./bin/execute.py --input_json data.json --output data-transformed.json`
+. Both --input_json and --output parameters defaults to `data.json` & `data-transformed.json` respectively
+. Presence of the `input_json` file is mandatory else the script exits with a non-zero error code
 . You can add a new data input file and repeat the above step for executing it
 
 ===== Help

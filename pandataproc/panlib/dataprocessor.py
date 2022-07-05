@@ -25,9 +25,9 @@ class DataProcessor:
         """
         try:
             self.logger.debug(f"Loading input json data from {self.input_file}")
-            fp = self.input_file.open()
-            self.input_json_data = json.load(fp)
-            self.logger.debug(f"Successfully loaded input data from {self.input_file}")
+            with self.input_file.open() as fp:
+                self.input_json_data = json.load(fp)
+                self.logger.debug(f"Successfully loaded input data from {self.input_file}")
             return True
         except json.JSONDecodeError as err:
             self.logger.error(f"Encountered JSONDecodeError at {traceback.format_exc()}")

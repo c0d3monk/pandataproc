@@ -66,12 +66,12 @@ options:
 . Sample input data are present under the `data` folder
 . To run the container and enter into the bash shell:
     `sudo docker run -it pandataproc /bin/bash`
-. `bash-5.1# bin/execute.py --input_json data/data.json`
+. `bash-5.1# python bin/execute.py -i data/sample-input.json -o data-transformed.json -d`
 
 ===== Help
 [source]
 ----------------------------------------------------------------------------------------
-bash-5.1# bin/execute.py -h
+bash-5.1# python bin/execute.py -h
 usage: execute.py [-h] -i INPUT_JSON [-o OUTPUT] [-d]
 
 options:

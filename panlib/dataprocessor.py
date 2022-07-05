@@ -65,10 +65,10 @@ class DataProcessor:
                     orders_info['orders'] = orders
                     orders_info['customer'] = customer_id
                     processed_data['orders'].append(orders_info)
-                    response['result'] = processed_data
                 except Exception as err:
                     self.logger.error(f"Failed transforming the data {each_data} with error {err}")
                     response['errors'] = str(err)
+            response['result'] = processed_data
             self.logger.debug(f"Transforming data complete")
         else:
             error = "No data passed to transform"

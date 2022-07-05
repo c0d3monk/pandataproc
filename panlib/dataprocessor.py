@@ -83,7 +83,7 @@ class DataProcessor:
         try:
             with open(self.output, 'w') as fw:
                 self.logger.info(f"Writing the transformed data to {self.output}")
-                fw.write(json.dumps(data, indent=4))
+                fw.write(json.dumps(data.get("result"), indent=4))
         except Exception as err:
             self.logger.error(f"Failed while saving transformed data to file with error: {err}")
             return False

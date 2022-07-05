@@ -90,12 +90,12 @@ options:
 * Extract `pandataproc-main.zip`
 * Change folder into the extracted directory
 * Export `PYTHONPATH` to current working directory
-* Execute `python -m pytest` **OR** navigate to `tests` folder and execute `pytest`
-* To list all available unit tests: `python -m pytest --collect-only` **OR** navigate to `tests` folder and execute `pytest --co`
+* Navigate to `tests` folder and execute `pytest`
+* To list all available unit tests: Navigate to `tests` folder and execute `pytest --co`
 
 === Coverage
 * To get coverage report
-* Execute `python -m pytest --cov` **OR** navigate to `tests` folder and execute `pytest --cov`
+* Navigate to `tests` folder and execute `pytest --cov`
 * Current coverage
 
 [source]

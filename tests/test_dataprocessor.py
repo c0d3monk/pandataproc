@@ -1,4 +1,3 @@
-import pytest
 from panlib.dataprocessor import DataProcessor
 import logging
 from pathlib import Path

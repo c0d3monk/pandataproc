@@ -13,9 +13,9 @@ ENV PYTHONPATH=$PYTHONPATH:/pandataproc
 COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 
-ADD pandataproc/tests /pandataproc/tests
-ADD pandataproc/bin /pandataproc/bin
-ADD pandataproc/data /pandataproc/data
-ADD pandataproc/panlib /pandataproc/panlib
+ADD tests /pandataproc/tests
+ADD bin /pandataproc/bin
+ADD data /pandataproc/data
+ADD panlib /pandataproc/panlib
 
 

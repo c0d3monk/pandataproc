@@ -12,7 +12,7 @@ if __name__ == '__main__':
     logger = logging.getLogger(__name__)
 
     parser = ArgumentParser()
-    parser.add_argument("-i", "--input_json", help="Input data json file", required=True)
+    parser.add_argument("-i", "--input_json", help="Input data json file", required=True, default="data.json")
     parser.add_argument("-o", "--output", default="data-transformed.json", help="Output file to write the transformed "
                                                                                 "data")
     parser.add_argument("-d", "--debug", action="store_true", help="Enable debug logging")

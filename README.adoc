@@ -103,20 +103,20 @@ options:
 platform linux -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0
 rootdir: /home/abhi/git/pandataproc
 plugins: cov-3.0.0
-collected 5 items
+collected 7 items
 
-test_dataprocessor.py .....                                                                                                                                                                         [100%]
+test_dataprocessor.py .......                                                                                                                                                                       [100%]
 
 ---------- coverage: platform linux, python 3.10.4-final-0 -----------
-Name                                                             Stmts   Miss  Cover
-------------------------------------------------------------------------------------
-/home/abhi/git/pandataproc/pandataproc/__init__.py                   0      0   100%
-/home/abhi/git/pandataproc/pandataproc/panlib/__init__.py            0      0   100%
-/home/abhi/git/pandataproc/pandataproc/panlib/dataprocessor.py      51      0   100%
-__init__.py                                                          0      0   100%
-test_dataprocessor.py                                               35      0   100%
-------------------------------------------------------------------------------------
-TOTAL                                                               86      0   100%
+Name                                                 Stmts   Miss  Cover
+------------------------------------------------------------------------
+/home/abhi/git/pandataproc/panlib/__init__.py            0      0   100%
+/home/abhi/git/pandataproc/panlib/dataprocessor.py      59      0   100%
+__init__.py                                              0      0   100%
+test_dataprocessor.py                                   42      0   100%
+------------------------------------------------------------------------
+TOTAL                                                  101      0   100%
+
 
 ----------------------------------------------------------------------------------------
 

@@ -5,7 +5,6 @@ from panlib.dataprocessor import DataProcessor
 from pathlib import Path
 import logging
 import sys
-import json
 
 
 if __name__ == '__main__':
@@ -36,12 +35,8 @@ if __name__ == '__main__':
 
     data_processor = DataProcessor(input_file=input_file, output=args.output, logger=logger)
     if data_processor.load_input():
-        final_data = data_processor.transform_data()
-        if final_data:
-            # logger.debug(json.dumps(final_data, indent=4, sort_keys=True))
-            with open(args.output, 'w') as fw:
-                logger.info(f"Writing the transformed data to {args.output}")
-                fw.write(json.dumps(final_data, indent=4))
+        data_processor.transform_data()
+        data_processor.save_data()
     else:
         logger.error(f"Failed to transform data!")
 

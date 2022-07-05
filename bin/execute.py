@@ -35,8 +35,8 @@ if __name__ == '__main__':
 
     data_processor = DataProcessor(input_file=input_file, output=args.output, logger=logger)
     if data_processor.load_input():
-        data_processor.transform_data()
-        data_processor.save_data()
+        transformed_data = data_processor.transform_data()
+        data_processor.save_data(data=transformed_data)
     else:
         logger.error(f"Failed to transform data!")
 

@@ -42,7 +42,7 @@ class DataProcessor:
         :return:
         processed_data
         """
-        self.logger.debug(self.input_json_data)
+        # self.logger.debug(self.input_json_data)
         if self.input_json_data:
             for each_data in self.input_json_data:
                 try:

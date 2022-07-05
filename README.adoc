@@ -14,7 +14,7 @@ The application is to tranform a given JSON input into a specific formatted JSON
 * Please use the most suitable one.
 
 === Python Package
-* Extract the file `pandataproc.zip`
+* Download the source code & extract the file `pandataproc-main.zip`
 * The `setup.py` can be used to install the python package directly on the system and executed
 
 ==== Install setup.py
@@ -57,7 +57,7 @@ options:
 ==== Build docker image
 
 * If the pre-defined image is not available you can build the docker image directly on the system to be used.
-* After extracting the source `py-pandataproc.zip` navigate to the extracted folder containing `Dockerfile`
+* After extracting the source `pandataproc-main.zip` navigate to the extracted folder containing `Dockerfile`
 * `sudo docker build -t pandataproc .`
 
 ==== Run
@@ -87,7 +87,7 @@ options:
 == Unit Tests
 
 * All unit tests reside under the `tests` folder
-* Extract `py-pandataproc.zip`
+* Extract `pandataproc-main.zip`
 * Change folder into the extracted directory
 * Export `PYTHONPATH` to current working directory
 * Execute `python -m pytest` **OR** navigate to `tests` folder and execute `pytest`

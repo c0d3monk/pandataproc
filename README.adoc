@@ -103,20 +103,19 @@ options:
 platform linux -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0
 rootdir: /home/abhi/git/pandataproc
 plugins: cov-3.0.0
-collected 7 items
+collected 8 items
 
-test_dataprocessor.py .......                                                                                                                                                                       [100%]
+test_dataprocessor.py ........                                                                                                                                                                      [100%]
 
 ---------- coverage: platform linux, python 3.10.4-final-0 -----------
 Name                                                 Stmts   Miss  Cover
 ------------------------------------------------------------------------
 /home/abhi/git/pandataproc/panlib/__init__.py            0      0   100%
-/home/abhi/git/pandataproc/panlib/dataprocessor.py      59      0   100%
+/home/abhi/git/pandataproc/panlib/dataprocessor.py      64      0   100%
 __init__.py                                              0      0   100%
-test_dataprocessor.py                                   42      0   100%
+test_dataprocessor.py                                   54      0   100%
 ------------------------------------------------------------------------
-TOTAL                                                  101      0   100%
-
+TOTAL                                                  118      0   100%
 
 ----------------------------------------------------------------------------------------
 

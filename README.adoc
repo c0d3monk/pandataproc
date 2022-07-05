@@ -1,0 +1,125 @@
+= Palo Alto: Data Transform
+Abhisek Kumar Rout <abhisek.rout99@gmail.com>
+:toc:
+
+== Overview
+
+The application is to tranform a given JSON input into a specific formatted JSON output as per the requirements
+
+== Packages
+
+* The tool is available in two formats to be executed
+    ** **Python Package**
+    ** **Docker Image**
+* Please use the most suitable one.
+
+=== Python Package
+* Extract the file `pandataproc.zip`
+* The `setup.py` can be used to install the python package directly on the system and executed
+
+==== Install setup.py
+
+* `python3 ./setup.py install`
+
+==== Run
+
+===== Steps
+. `./bin/execute.py --input_json data/data.json --output data-transformed.json`
+. You can add a new data input file and repeat the above step for executing it
+
+===== Help
+[source]
+----------------------------------------------------------------------------------------
+bash-5.1# bin/execute.py -h
+usage: execute.py [-h] -i INPUT_JSON [-o OUTPUT] [-d]
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT_JSON, --input_json INPUT_JSON
+                        Input data json file
+  -o OUTPUT, --output OUTPUT
+                        Output file to write the transformed data
+  -d, --debug           Enable debug logging
+
+----------------------------------------------------------------------------------------
+
+=== Docker Image
+* Filename: `docker-pandataproc.tgz`
+* This can be loaded to run as a container and the game simulation can be executed from within the containers
+
+==== Docker load from pre-defined image
+
+* To load the pre-defined image: `sudo docker load -i docker-pandataproc.tgz`
+* Issuing `sudo docker image ls` should list the `pandataproc` image
+
+==== Build docker image
+
+* If the pre-defined image is not available you can build the docker image directly on the system to be used.
+* After extracting the source `py-pandataproc.zip` navigate to the extracted folder containing `Dockerfile`
+* `sudo docker build -t pandataproc .`
+
+==== Run
+
+===== Steps
+. Sample input data are present under the `data` folder
+. To run the container and enter into the bash shell:
+    `sudo docker run -it pandataproc /bin/bash`
+. `bash-5.1# bin/execute.py --input_json data/data.json`
+
+===== Help
+[source]
+----------------------------------------------------------------------------------------
+bash-5.1# bin/execute.py -h
+usage: execute.py [-h] -i INPUT_JSON [-o OUTPUT] [-d]
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT_JSON, --input_json INPUT_JSON
+                        Input data json file
+  -o OUTPUT, --output OUTPUT
+                        Output file to write the transformed data
+  -d, --debug           Enable debug logging
+----------------------------------------------------------------------------------------
+
+
+== Unit Tests
+
+* All unit tests reside under the `tests` folder
+* Extract `py-pandataproc.zip`
+* Change folder into the extracted directory
+* Export `PYTHONPATH` to current working directory
+* Execute `python -m pytest` **OR** navigate to `tests` folder and execute `pytest`
+* To list all available unit tests: `python -m pytest --collect-only` **OR** navigate to `tests` folder and execute `pytest --co`
+
+=== Coverage
+* To get coverage report
+* Execute `python -m pytest --cov` **OR** navigate to `tests` folder and execute `pytest --cov`
+* Current coverage
+
+[source]
+----------------------------------------------------------------------------------------
+platform linux -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0
+rootdir: /home/abhi/git/pandataproc
+plugins: cov-3.0.0
+collected 5 items
+
+test_dataprocessor.py .....                                                                                                                                                                         [100%]
+
+---------- coverage: platform linux, python 3.10.4-final-0 -----------
+Name                                                             Stmts   Miss  Cover
+------------------------------------------------------------------------------------
+/home/abhi/git/pandataproc/pandataproc/__init__.py                   0      0   100%
+/home/abhi/git/pandataproc/pandataproc/panlib/__init__.py            0      0   100%
+/home/abhi/git/pandataproc/pandataproc/panlib/dataprocessor.py      51      0   100%
+__init__.py                                                          0      0   100%
+test_dataprocessor.py                                               35      0   100%
+------------------------------------------------------------------------------------
+TOTAL                                                               86      0   100%
+
+----------------------------------------------------------------------------------------
+
+== Logging
+
+* By default, the logs are sent to `STDOUT`
+* To enable debug logs please pass `--debug` or `-d` flag to `execute.py`
+    ** Example: `bin/execute.py --input_json data/data.json --debug`
